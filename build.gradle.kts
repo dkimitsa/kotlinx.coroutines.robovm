@@ -19,6 +19,24 @@ publishing {
             artifactId = "kotlinx-coroutines-robovm"
             version = "0.1-SNAPSHOT"
 
+            pom {
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("dkimitsa")
+                        name.set("Demyan Kimitsa")
+                        email.set("demyan.kimitsa@gmail.com")
+                    }
+                }
+            }
+            repositories {
+                maven(url = uri("https://oss.sonatype.org/content/repositories/snapshots"))
+            }
             from(components["kotlin"])
         }
     }
