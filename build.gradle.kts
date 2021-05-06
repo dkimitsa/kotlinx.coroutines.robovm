@@ -35,7 +35,11 @@ publishing {
                 }
             }
             repositories {
-                maven(url = uri("https://oss.sonatype.org/content/repositories/snapshots"))
+                maven {
+                    name = "ossrh"
+                    credentials(PasswordCredentials::class)
+                    url = uri("https://oss.sonatype.org/content/repositories/snapshots")
+                }
             }
             from(components["kotlin"])
         }
